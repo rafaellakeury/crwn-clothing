@@ -4,8 +4,7 @@ import FormInput from '../form-input/FormInput';
 import CustomButton from '../custom-button/CustomButton';
 
 import './SignUp.scss';
-import { auth } from 'firebase';
-import { createUserProfileDocument } from '../../firebase/FirebaseUtils';
+import { auth, createUserProfileDocument } from '../../firebase/FirebaseUtils';
 
 class SignUp extends React.Component {
     constructor() {
@@ -24,7 +23,7 @@ class SignUp extends React.Component {
 
         const {displayName, email, password, confirmPassword} = this.state;
 
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             alert("passwords don't match");
             return;
         }
